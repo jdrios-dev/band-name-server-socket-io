@@ -25,9 +25,14 @@
   });
 
   socket.emit('mensaje', {nombre: 'Daniel'} );
-  socket.on('mensaje', function(e){
-    console.log('lego el mensaje al cliente', e.admin);
+  socket.on('nuevo-mensaje', function(e){
+    console.log('llego el mensaje al cliente', e);
   });
+
+  socket.on('active-bands', function(bands){
+    console.clear();
+    console.table(bands);
+  })
 </script>
 
 </body>

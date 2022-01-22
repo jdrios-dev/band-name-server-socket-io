@@ -14,7 +14,6 @@ const PORT = process.env.PORT;
 
 //Public Path
 const publicPath = path.resolve(__dirname, 'public');
-
 app.use(express.static(publicPath))
 
 server.listen(PORT, (err) => {
