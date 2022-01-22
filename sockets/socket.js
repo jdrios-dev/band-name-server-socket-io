@@ -4,12 +4,7 @@ const Bands = require('../models/bands');
 
 const bands = new Bands();
 
-bands.addBand(new Band('Morat'));
-bands.addBand(new Band('Heroes'));
-bands.addBand(new Band('The Police'));
-bands.addBand(new Band('Nirvana'));
 
-// console.log(bands);
 
 io.on('connection', client => {
   console.log('Client connected', client.id);
@@ -38,9 +33,4 @@ io.on('connection', client => {
     bands.deleteBand(payload.id);
     io.emit('active-bands', bands.getBands());
   });
-
-  // client.on('nuevo-mensaje', (payload) => {
-  //   console.log(payload);
-  //   client.broadcast.emit('nuevo-mensaje', payload);
-  // })
 });
